@@ -18,16 +18,30 @@
             <input type="search" id="search">
         </div>
 
-        <button class="logInBtn" id="logInBtn"></button>
+         <button class="btn logInBtn" id="logInBtn">Login</button>
 
         <div id="myModal" class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
-                <h1>LOG IN</h1>
-                <label for="email-login">email:</label>
-                <input type="text" id="email-login">
-                <h2>YOUR EMAIL: </h2>
-                <H2>YOUR PASSWORD: </H2>
+                <h1>Login</h1>
+
+                <div class="form-element">
+                    <label for="email-login">Email:</label>
+                    <input type="text" id="email-login" placeholder="Enter Email">
+                </div>
+                
+                <div class="form-element">
+                    <label for="password-login">Password: </label>
+                    <input type="password" id="password-login" placeholder="Enter Password">
+                </div>
+
+                <div class="form-element">
+                    <button class="btn btn-primary" type="submit">login</button>
+                </div> 
+                <div class="form-element">
+                    <a href="#">Forgot Password?</a>
+                </div>
+                
         </div>
         {{#if logged_in}}
         <button class="btn" id="logout">logout</button>
@@ -44,6 +58,7 @@
   <footer>
       
   </footer>
+  <script src="/public/js/modal.js"></script>
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
