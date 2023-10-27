@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fast Car Rental</title>
+  <link rel="stylesheet" href="/css/jass.css">
+</head>
+
+<body>
+  <header class="display-flex justify-space-between align-center p-2">
+    <nav>
+        <h1>FAST CAR RENTALS LOGO</h1>
+
+        <div class="searchBar">
+            <label for="search">Search cars</label>
+            <input type="search" id="search">
+        </div>
+
+        <button class="logInBtn" id="logInBtn"></button>
+
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h1>LOG IN</h1>
+                <label for="email-login">email:</label>
+                <input type="text" id="email-login">
+                <h2>YOUR EMAIL: </h2>
+                <H2>YOUR PASSWORD: </H2>
+        </div>
+        {{#if logged_in}}
+        <button class="btn" id="logout">logout</button>
+        {{/if}}
+
+</div>
+    </nav>
+
+  
+  </header>
+  <main class="container container-fluid mt-5">
+    {{{ body }}}
+  </main>
+  <footer>
+      
+  </footer>
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+</body>
+
+</html>
