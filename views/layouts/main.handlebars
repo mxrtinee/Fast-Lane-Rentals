@@ -5,44 +5,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fast Car Rental</title>
-  <link rel="stylesheet" href="/css/jass.css">
+  <link rel="stylesheet" href="/public/css/handlebars.css">
 </head>
 
 <body>
-  <header class="display-flex justify-space-between align-center p-2">
-    <nav>
+  <header>
+     <nav>
         <h1>FAST CAR RENTALS LOGO</h1>
 
         <div class="searchBar">
             <label for="search">Search cars</label>
             <input type="search" id="search">
+            <button class="btn" type="submit">Search</button>
         </div>
 
-         <button class="btn logInBtn" id="logInBtn">Login</button>
+        <button class="btn logInBtn" id="logInBtn">Login</button>
+   
+    </nav>
 
-        <div id="myModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h1>Login</h1>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+          <span class="close">&times;</span>
+          <h1>Login</h1>
+      <form class="login-form">
+          <div class="form-element">
+              <label for="email-login">Email:</label>
+              <input type="text" id="email-login" placeholder="Enter Email">
+          </div>
+          
+          <div class="form-element">
+              <label for="password-login">Password: </label>
+              <input type="password" id="password-login" placeholder="Enter Password">
+          </div>
 
-                <div class="form-element">
-                    <label for="email-login">Email:</label>
-                    <input type="text" id="email-login" placeholder="Enter Email">
-                </div>
-                
-                <div class="form-element">
-                    <label for="password-login">Password: </label>
-                    <input type="password" id="password-login" placeholder="Enter Password">
-                </div>
-
-                <div class="form-element">
-                    <button class="btn btn-primary" type="submit">login</button>
-                </div> 
-                <div class="form-element">
-                    <a href="#">Forgot Password?</a>
-                </div>
-                
-        </div>
+          <div class="form-element">
+              <button class="btn btn-primary" type="submit">login</button>
+          </div> 
+          <div class="form-element">
+              <a href="#">Forgot Password?</a>
+          </div>
+      </form>
+          
+  </div>
         {{#if logged_in}}
         <button class="btn" id="logout">logout</button>
         {{/if}}
