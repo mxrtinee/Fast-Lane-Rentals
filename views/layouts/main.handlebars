@@ -5,30 +5,69 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fast Car Rental</title>
-  <link rel="stylesheet" href="/css/jass.css">
+  <link rel="stylesheet" href="/public/css/handlebars.css">
 </head>
 
 <body>
-  <header class="display-flex justify-space-between align-center p-2">
-    <nav>
+  <header>
+     <nav>
         <h1>FAST CAR RENTALS LOGO</h1>
 
         <div class="searchBar">
-            <label for="search">Search cars</label>
-            <input type="search" id="search">
+            <input type="search" id="search" placeholder="Search Cars">
+            <button class="btn" type="submit">Search</button>
         </div>
 
-        <button class="logInBtn" id="logInBtn"></button>
+        <button class="btn logInBtn" id="logInBtn">Login</button>
+   
+    </nav>
 
-        <div id="myModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h1>LOG IN</h1>
-                <label for="email-login">email:</label>
-                <input type="text" id="email-login">
-                <h2>YOUR EMAIL: </h2>
-                <H2>YOUR PASSWORD: </H2>
-        </div>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+           
+    <div class="form-block">
+        <h1>Login</h1>
+          <form class="form login-form">
+              <div class="form-group">
+                  <label for="email-login">Email:</label>
+                  <input class="form-input" type="text" id="email-login" />
+              </div>
+              <div class="form-group">
+                  <label for="password-login">Password:</label>
+                  <input class="form-input" type="password" id="password-login" />
+              </div>
+              <div class="form-group">
+                  <button class="btn btn-primary" type="submit">login</button>
+              </div>
+      
+              <div class="form-element">
+                <a href="#">Forgot Password?</a>
+              </div>
+        </form>
+    </div> 
+    <div class="form-block">
+        <h1>SIGN UP </h1>
+        <form class="form signup-form">
+            <div class="form-group">
+                <label for="username-signup">Username:</label>
+                <input class="form-input" type="text" id="username-signup" />
+            </div>
+            <div class="form-group">
+                <label for="email-signup">Email:</label>
+                <input class="form-input" type="text" id="email-signup" />
+            </div>
+            <div class="form-group">
+                <label for="password-signup">Password:</label>
+                <input class="form-input" type="password" id="password-signup" />
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit">Sign Up</button>
+            </div>
+
+        </form>
+    </div>
+    <span class="close">&times;</span>
+    </div>
         {{#if logged_in}}
         <button class="btn" id="logout">logout</button>
         {{/if}}
@@ -44,6 +83,7 @@
   <footer>
       
   </footer>
+  <script src="/public/js/modal.js"></script>
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
