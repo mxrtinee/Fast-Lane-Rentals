@@ -13,8 +13,8 @@
   position: fixed;
   background-color: #c4c4c4;
   }
-  
-  nav h1 {
+  /* make sure to change when we get logo*/
+  nav h1 { 
     margin: 0;
   }
   .searchBar {
