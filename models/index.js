@@ -17,3 +17,5 @@ Booking.belongsTo(User, {
 Booking.belongsTo(Car, {
   foreignKey: "car_id",
 });
+
+module.exports = { User, Car, Booking };
