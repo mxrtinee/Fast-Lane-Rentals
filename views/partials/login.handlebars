@@ -1,26 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+    <button class="btn logInBtn" id="logInBtn">Login</button>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fast Car Rental</title>
-  <link rel="stylesheet" href="/public/css/handlebars.css">
-</head>
-
-<body>
-  <header>
-     <nav>
-        <img src="../../public/images/fast-lane-rentals.png" alt="">
-
-        <div class="searchBar">
-            <input type="search" id="search" placeholder="Search Cars">
-            <button class="btn" type="submit">Search</button>
-        </div>
-
-        <button class="btn logInBtn" id="logInBtn">Login</button>
-   
-    </nav>
 
     <div id="myModal" class="modal">
         <div class="modal-content">
@@ -67,26 +46,4 @@
         </form>
     </div>
     <span class="close">&times;</span>
-    </div>
-        {{#if logged_in}}
-        <button class="btn" id="logout">logout</button>
-        {{/if}}
-
-</div>
-    </nav>
-
-  
-  </header>
-  <main class="container container-fluid mt-5">
-    {{{ body }}}
-  </main>
-  <footer>
-      
-  </footer>
-  <script src="/public/js/modal.js"></script>
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
-</body>
-
-</html>
+    
