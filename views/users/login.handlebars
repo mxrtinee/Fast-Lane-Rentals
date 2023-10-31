@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fast Car Rental</title>
+  <link rel="stylesheet" href="/public/css/handlebars.css">
+</head>
+
+<body>
+  <header>
+     <nav>
+        <img src="../../public/images/fast-lane-rentals.png" alt="">
+
+        <div class="searchBar">
+            <input type="search" id="search" placeholder="Search Cars">
+            <button class="btn" type="submit">Search</button>
+        </div>
+
+        <button class="btn logInBtn" id="logInBtn">Login</button>
+   
+    </nav>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+           
+    <div class="form-block">
+        <h1>Login</h1>
+          <form class="form login-form">
+              <div class="form-group">
+                  <label for="email-login">Email:</label>
+                  <input class="form-input" type="text" id="email-login" />
+              </div>
+              <div class="form-group">
+                  <label for="password-login">Password:</label>
+                  <input class="form-input" type="password" id="password-login" />
+              </div>
+              <div class="form-group">
+                  <button class="btn btn-primary" type="submit">login</button>
+              </div>
+      
+              <div class="form-element">
+                <a href="#">Forgot Password?</a>
+              </div>
+        </form>
+    </div> 
+    <div class="form-block">
+        <h1>SIGN UP </h1>
+        <form class="form signup-form">
+            <div class="form-group">
+                <label for="username-signup">Username:</label>
+                <input class="form-input" type="text" id="username-signup" />
+            </div>
+            <div class="form-group">
+                <label for="email-signup">Email:</label>
+                <input class="form-input" type="text" id="email-signup" />
+            </div>
+            <div class="form-group">
+                <label for="password-signup">Password:</label>
+                <input class="form-input" type="password" id="password-signup" />
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit">Sign Up</button>
+            </div>
+
+        </form>
+    </div>
+    <span class="close">&times;</span>
+    </div>
+        {{#if logged_in}}
+        <button class="btn" id="logout">logout</button>
+        {{/if}}
+
+</div>
+    </nav>
+
+  
+  </header>
+  <main class="container container-fluid mt-5">
+    {{{ body }}}
+  </main>
+  <footer>
+      
+  </footer>
+  <script src="/public/js/modal.js"></script>
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+</body>
+
+</html>
