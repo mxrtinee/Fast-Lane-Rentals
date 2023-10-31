@@ -17,7 +17,7 @@
   },
   {
     "make": "Honda",
-    "model": "Civic Type R",
+    "model": "Civic",
     "year": 2021,
     "color": "Red",
     "price": 45,
@@ -123,7 +123,7 @@
     "make": "BMW M4",
     "model": "GTS Coupe",
     "year": 2018,
-    "color": "Green",
+    "color": "Lime-Green",
     "price": 70,
     "availability": false
   }
