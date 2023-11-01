@@ -49,6 +49,19 @@ h1 {
     font-size: 30px;
 }
 
+h1 {
+    color: var(--one);
+    font-size: 30px;
+}
+
+h2 {
+    color: var(--one);
+    font-size: 20px;
+    font-style: italic;
+    text-align: center;
+    font-weight: bold;
+}
+
 h3 {
     color: var(--one);
     font-size: 15px;
@@ -60,6 +73,23 @@ h4 {
     font-size: 20px;
     font-style: italic;
     text-align: center;
+}
+
+h5 {
+    color: var(--one);
+    font-size: 20px;
+    font-style: italic;
+}
+
+h6 {
+    color: var(--one);
+    font-size: 20px;
+    font-style: italic;
+}
+
+p {
+    color: var(--one);
+    font-size: 10px;
 }
 
 /* .search-container {
