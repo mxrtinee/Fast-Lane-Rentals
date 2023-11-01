@@ -1,5 +1,4 @@
-const express = require('express');
-const router = express.Router();
+const router = require('express').Router();
 
 // Import individual route files for the resource
 const bookingRoutes = require('./bookingRoutes');
