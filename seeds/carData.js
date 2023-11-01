@@ -2,6 +2,7 @@ const cars = [
   {
     make: "Toyota",
     model: "Camry",
+    imageSrc: "Toyota Camry",
     year: 2022,
     color: "Silver",
     price: 50,
@@ -10,6 +11,7 @@ const cars = [
   {
     make: "Nissan",
     model: "Altima",
+    imageSrc: "",
     year: 2022,
     color: "Black",
     price: 30,
@@ -18,6 +20,7 @@ const cars = [
   {
     make: "Honda",
     model: "Civic",
+    imageSrc: "",
     year: 2021,
     color: "Red",
     price: 45,
@@ -26,6 +29,7 @@ const cars = [
   {
     make: "Kia",
     model: "Rio",
+    imageSrc: "",
     year: 2022,
     color: "Pearl-White",
     price: 60,
@@ -34,6 +38,7 @@ const cars = [
   {
     make: "Ford",
     model: "F-150",
+    imageSrc: "",
     year: 2023,
     color: "Blue",
     price: 75,
@@ -42,6 +47,7 @@ const cars = [
   {
     make: "Toyota",
     model: "Tundra",
+    imageSrc: "",
     year: 2023,
     color: "White",
     price: 85,
@@ -50,6 +56,7 @@ const cars = [
   {
     make: "Toyota",
     model: "Rav4 Plug-In Hybrid",
+    imageSrc: "",
     year: 2023,
     color: "White",
     price: 75,
@@ -58,6 +65,7 @@ const cars = [
   {
     make: "Chevrolet",
     model: "Tahoe",
+    imageSrc: "",
     year: 2021,
     color: "Maroon",
     price: 85,
@@ -66,6 +74,7 @@ const cars = [
   {
     make: "Tesla",
     model: "Model Y long range",
+    imageSrc: "",
     year: 2020,
     color: "Black",
     price: 75,
@@ -74,6 +83,7 @@ const cars = [
   {
     make: "Hyundai",
     model: "Ioniq 5 SE",
+    imageSrc: "",
     year: 2023,
     color: "Silver",
     price: 50,
@@ -82,6 +92,7 @@ const cars = [
   {
     make: "Chrysler Pacifica Plug-In Hybrid",
     model: "Pinnacle",
+    imageSrc: "",
     year: 2023,
     color: "Silver",
     price: 80,
@@ -90,6 +101,7 @@ const cars = [
   {
     make: "Volkswagen",
     model: "Eurovan MV",
+    imageSrc: "",
     year: 2003,
     color: "Blue",
     price: 45,
@@ -98,6 +110,7 @@ const cars = [
   {
     make: "Mercedes-Benz",
     model: "SL 63 AMG 4Matic",
+    imageSrc: "",
     year: 2022,
     color: "Metallic Grey",
     price: 85,
@@ -106,6 +119,7 @@ const cars = [
   {
     make: "Volkswagen Beetle",
     model: "2.0T FWD",
+    imageSrc: "",
     year: 2019,
     color: "Yellow",
     price: 60,
@@ -114,6 +128,7 @@ const cars = [
   {
     make: "Porsche 911",
     model: "GT3 RS",
+    imageSrc: "",
     year: 2016,
     color: "Burgundy",
     price: 85,
@@ -122,6 +137,7 @@ const cars = [
   {
     make: "BMW M4",
     model: "GTS Coupe",
+    imageSrc: "",
     year: 2018,
     color: "Lime-Green",
     price: 70,
