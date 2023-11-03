@@ -13,11 +13,11 @@ router.post("/", async (req, res) => {
     req.session.save(() => {
       req.session.loggedIn = true;
 
-      res.status(200).json(dbUserData);
+      res.status(200).json({ user: dbUserData, message: "User created successfully. You are now logged in!" });
     });
   } catch (err) {
     console.log(err);
-    res.status(500).json(err);
+    res.status(500).json({ message: "Internal server error. Please try again later." });
   }
 });
 
@@ -33,7 +33,7 @@ router.post("/login", async (req, res) => {
     if (!dbUserData) {
       res
         .status(400)
-        .json({ message: "Incorrect email or password. Please try again! " });
+        .json({ message: "User not found. Please try again with a different email or sign up." });
       return;
     }
 
@@ -54,7 +54,7 @@ router.post("/login", async (req, res) => {
     });
   } catch (err) {
     console.log(err);
-    res.status(500).json(err);
+    res.status(500).json({ message: "Internal server error. Please try again later." });
   }
 });
 
