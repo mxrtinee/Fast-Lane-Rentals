@@ -44,6 +44,10 @@ button:hover{
     margin: 2px;
 }
 
+a {
+    padding: 10px;
+}
+
 h1 {
     color: var(--one);
     font-size: 30px;
