@@ -83,13 +83,19 @@ h5 {
 
 h6 {
     color: var(--one);
-    font-size: 20px;
+    font-size: 10px;
     font-style: italic;
 }
 
 p {
     color: var(--one);
-    font-size: 10px;
+    font-size: 5px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
 }
 
 /* .search-container {
