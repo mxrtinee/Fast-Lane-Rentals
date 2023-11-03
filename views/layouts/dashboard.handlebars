@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fast Lane Rentals</title>
+</head>
+<body>
+  <header>
+    <h1>User Profile</h1>
+  </header>
+  <main>
+    <h2>Welcome, {{user.username}}!</h2>
+
+    <form id="update-user-form">
+      <div class="form-group">
+        <h3>Change Email</h3>
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" value="{{user.email}}">
+      </div>
+      <div class="form-group">
+        <h3>Change Username</h3>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" value="{{user.username}}">
+      </div>
+      <div class="form-group">
+        <h3>Change password</h3>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+      </div>
+      <button type="submit">Update</button>
+    </form>
+
+    <p id="update-message"></p>
+  </main>
+</body>
+</html>
