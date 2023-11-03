@@ -5,7 +5,7 @@
     <h3>Glad to see you made it to your destination, {{user.username}}!</h3>
     <h2>Your Feedback Matters</h2>
 
-    <div id="reviewmodal" class="modal" style="display: none;">
+   <!-- <div id="reviewmodal" class="modal" style="display: none;">
     <div class="reviewcontent">
       <div class="left-side">
         <h5 id="day"></h5>
@@ -20,5 +20,28 @@
       </div>
       <h6 onclick="closeModal()" class="closeBtn"></h6>
     </div>
+    </div> -->
+
+     <button id="openModal" class="btn btn-primary" onclick="openModal()">
+          Let's Hear It!
+     </button>
+
+  <div id="reviewmodal" class="modal" style="display: none;">
+    <div class="reviewcontent">
+      <div class="left-side">
+        <h3 id="day"></h3>
+        <span id="hour"></span>
+      </div>
+      <div class="right-side">
+        <form id="reviewForm">
+          <input type="text" placeholder="which car did you rent out?" id="car-input">
+          <input type="text" placeholder="how was your entire experience, before, during and after?" id="experience-input">
+          <button type="submit" id="modalSubmit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+      <h3 onclick="closeModal()" class="closeBtn">&times</h3>
     </div>
+  </div>
+
+
   </main>
