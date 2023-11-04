@@ -5,31 +5,36 @@
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
             <span class="navbar-toggler-icon"></span>
           </button>
+          
+
+         <div class="navbar">
           <div class="collapse navbar-collapse" id="mynavbar">
             <ul class="navbar-nav me-auto">
                 
-              <!--<li class="nav-item">
-                <a class="nav-link" href="#">Contact Us</a>
-              </li>-->
+              <li class="nav-item">
+                <a class="nav-link" href="/main.handlebars">Home</a>
+              </li>
               <li class="nav-item">
                 <a class="nav-link" href="/about">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Cars</a>
+                <a class="nav-link" href="/cars">Cars</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Reviews</a>
-              </li>
+              {{!-- <li class="nav-item">
+                <a class="nav-link" href="/reviews">Reviews</a>
+              </li> --}}
             </ul> 
             
             <form class="d-flex">
               {{#if logged_in}}
                 <button class="btn" id="logout">Log Out</button>
               {{/if}}
-              <input class="form-control me-2" type="text" placeholder="Search">
-              <button class="btn btn-primary" type="button" id="logInBtn">Search</button>
-            </form>
+
+              {{!-- <input class="form-control me-2" type="text" placeholder="Search">
+              <button class="btn btn-primary" type="button" id="logInBtn">Search</button> --}}
+            </form> --}}
             
           </div>
+         </div>
         </div>
       </nav>

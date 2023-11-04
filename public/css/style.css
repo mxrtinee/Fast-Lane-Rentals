@@ -10,6 +10,10 @@
     --five:#FFFDD0;
 }
 
+main {
+    text-align: center;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -20,11 +24,22 @@ header{
     font-size: 60px;
     font-style: italic;
     background-color: var(--one);
-    text-align: center;
 }
 
 nav {
     background-color: var(--five);
+    text-align: right;
+    padding-right: 10px;
+    width: 100%;
+}
+
+.navbar {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 20px;
 }
 
 .nav-link{
@@ -85,6 +100,10 @@ h5 {
     font-style: italic;
 }
 
+a {
+    color: var(--two);
+}
+
 h6 {
     color: var(--one);
     font-size: 10px;
@@ -93,13 +112,9 @@ h6 {
 
 p {
     color: var(--one);
-    font-size: 5px;
-    position: fixed;
-    bottom: 0;
-    left: 0;
+    font-size: 15px;
     width: 100%;
     padding: 10px;
-    text-align: center;
 }
 
 /* .search-container {
@@ -144,12 +159,40 @@ p {
     color: var(--five);
 }
 
-footer {
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    flex: 1;
+}
+
+/* footer {
     color: var(--one);
     background-color: var(--five);
     text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     flex-direction: column; 
     justify-content: center; 
     align-items: center; 
-    padding: 0px;
-}
+    padding: 4px;
+    padding-top: 0.2px;
+} */
+
+footer {
+    color: var(--one);
+    background-color: var(--five);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
