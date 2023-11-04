@@ -1,46 +1,31 @@
-const router = require("express").Router();
-const withAuth = require('../utils/auth');
-const { Booking, User, Car } = require("../models");
+const express = require('express');
+const router = express.Router();
 
-// Prevent non logged in users from viewing the homepage
-router.get('/', withAuth, async (req, res) => {
-  try {
-    const userData = await User.findAll({
-      attributes: { exclude: ['password'] },
-      order: [['name', 'ASC']],
-    });
-
-    const users = userData.map((project) => project.get({ plain: true }));
-
-    res.render('homepage', {
-      users,
-      // Pass the logged in flag to the template
-      logged_in: req.session.logged_in,
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
+// Route to render the homepage
+router.get('/homepage', (req, res) => {
+  // Render the homepage view
+  res.render('homepage'); // Replace with your actual homepage view name
 });
 
-router.get('/login', (req, res) => {
-   //If a session exists, redirect the request to the homepage
-  if (req.session.logged_in) {
-    res.redirect('/');
-    return;
-  }
-
-  res.render('login');
-});
-
+// Route to render the about page
 router.get('/about', (req, res) => {
-  res.render('about');
+  // Render the about view
+  res.render('about'); // Replace with your actual about view name
+});
+
+// Route to render the login page
+router.get('/login', (req, res) => {
+  // Render the login view
+  res.render('login'); // Replace with your actual login view name
+});
+
+// Route to render the signup page
+router.get('/signup', (req, res) => {
+  // Render the signup view
+  res.render('signup'); // Replace with your actual signup view name
 });
 
 // User signup route
-router.get('/signup', (req, res) => {
-  res.render('signup'); // Render the signup form view
-});
-
 router.post('/signup', async (req, res) => {
   try {
     // Extract user data from the request body
@@ -60,7 +45,7 @@ router.post('/signup', async (req, res) => {
     req.session.user_id = newUser.id; // Store user ID in the session
 
     // Redirect to the user's dashboard or another page
-    res.redirect('/dashboard');
+    res.redirect('/userPage');
   } catch (err) {
     // Handle any errors, such as validation errors or database issues
     console.error(err);
