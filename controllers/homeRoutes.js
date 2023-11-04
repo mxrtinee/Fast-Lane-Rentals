@@ -15,8 +15,13 @@ router.get('/about', (req, res) => {
 
 // Route to render the login page
 router.get('/login', (req, res) => {
-  // Render the login view
-  res.render('login'); // Replace with your actual login view name
+  //If a session exists, redirect the request to the homepage
+ if (req.session.logged_in) {
+   res.redirect('/homepage');
+   return;
+ }
+
+ res.render('login');
 });
 
 // Route to render the signup page
