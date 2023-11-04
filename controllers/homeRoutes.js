@@ -36,6 +36,10 @@ router.get('/about', (req, res) => {
   res.render('about');
 });
 
+router.get('/cars', (req, res) => {
+  res.render('cars');
+});
+
 // User signup route
 router.get('/signup', (req, res) => {
   res.render('signup'); // Render the signup form view

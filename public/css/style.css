@@ -29,6 +29,8 @@ header{
 nav {
     background-color: var(--five);
     text-align: right;
+    padding-right: 10px;
+    width: 100%;
 }
 
 .navbar {
@@ -166,11 +168,11 @@ p {
     flex: 1;
 }
 
-footer {
+/* footer {
     color: var(--one);
-    position: fixed;
     background-color: var(--five);
     text-align: center;
+    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -178,4 +180,19 @@ footer {
     justify-content: center; 
     align-items: center; 
     padding: 4px;
-}
+    padding-top: 0.2px;
+} */
+
+footer {
+    color: var(--one);
+    background-color: var(--five);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
