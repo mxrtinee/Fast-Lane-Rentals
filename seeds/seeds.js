@@ -1,11 +1,11 @@
 // Import necessary modules
-const sequelize = require('../config/connection'); // Import your configured Sequelize instance
-const userData = require('./userData.js'); // Import user seed data
-const carData = require('./carData.js'); // Import car seed data
-const bookingData = require('./bookingData.js'); // Import booking seed data
+const sequelize = require("../config/connection"); // Import your configured Sequelize instance
+const userData = require("./userData.js"); // Import user seed data
+const carData = require("./carData.json"); // Import car seed data
+const bookingData = require("./bookingData.js"); // Import booking seed data
 
 // Import your Sequelize models
-const { User, Car, Booking } = require('../models');
+const { User, Car, Booking } = require("../models");
 
 // Function to seed the database
 const seedDatabase = async () => {
@@ -18,9 +18,9 @@ const seedDatabase = async () => {
     await Car.bulkCreate(carData);
     await Booking.bulkCreate(bookingData);
 
-    console.log('Database seeded successfully.');
+    console.log("Database seeded successfully.");
   } catch (err) {
-    console.error('Error seeding database:', err);
+    console.error("Error seeding database:", err);
   } finally {
     // Close the database connection
     await sequelize.close();

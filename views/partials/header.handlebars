@@ -23,6 +23,9 @@
             </ul> 
             
             <form class="d-flex">
+              {{#if logged_in}}
+                <button class="btn" id="logout">Log Out</button>
+              {{/if}}
               <input class="form-control me-2" type="text" placeholder="Search">
               <button class="btn btn-primary" type="button" id="logInBtn">Search</button>
             </form>

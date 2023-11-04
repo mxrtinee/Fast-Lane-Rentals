@@ -1,15 +1,17 @@
 <header>Late or Early, at least you'll arrive in style.</header>
 
-<div class="wheels">
+
 
 {{#each cars as |car|}}
-
+<div class="wheels">
 <section class="card">
     <img src="{{car.imageSrc}}" alt="{{car.make}} {{car.model}}">
    <h2>{{car.year}} {{car.make}} {{car.model}}</h2> 
    <p>{{car.price}}</p>
    <p>{{car.availability}}</p>
+   {{car.year}}
 </section>
 
 {{/each}}
+
 </div>
