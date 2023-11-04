@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "make": "Toyota",
     "model": "Camry",
     "imageSrc": "Toyota Camry",
@@ -9,6 +10,7 @@
     "availability": true
   },
   {
+    "id": 2,
     "make": "Nissan",
     "model": "Altima",
     "imageSrc": "",
@@ -18,6 +20,7 @@
     "availability": false
   },
   {
+    "id": 3,
     "make": "Honda",
     "model": "Civic",
     "imageSrc": "",
@@ -27,6 +30,7 @@
     "availability": true
   },
   {
+    "id": 4,
     "make": "Kia",
     "model": "Rio",
     "imageSrc": "",
@@ -36,6 +40,7 @@
     "availability": false
   },
   {
+    "id": 5,
     "make": "Ford",
     "model": "F-150",
     "imageSrc": "",
@@ -45,6 +50,7 @@
     "availability": true
   },
   {
+    "id": 6,
     "make": "Toyota",
     "model": "Tundra",
     "imageSrc": "",
@@ -54,6 +60,7 @@
     "availability": false
   },
   {
+    "id": 7,
     "make": "Toyota",
     "model": "Rav4 Plug-In Hybrid",
     "imageSrc": "",
@@ -63,6 +70,7 @@
     "availability": true
   },
   {
+    "id": 8,
     "make": "Chevrolet",
     "model": "Tahoe",
     "imageSrc": "",
@@ -72,6 +80,7 @@
     "availability": false
   },
   {
+    "id": 9,
     "make": "Tesla",
     "model": "Model Y long range",
     "imageSrc": "",
@@ -81,6 +90,7 @@
     "availability": true
   },
   {
+    "id": 10,
     "make": "Hyundai",
     "model": "Ioniq 5 SE",
     "imageSrc": "",
@@ -90,6 +100,7 @@
     "availability": false
   },
   {
+    "id": 11,
     "make": "Chrysler Pacifica Plug-In Hybrid",
     "model": "Pinnacle",
     "imageSrc": "",
@@ -99,6 +110,7 @@
     "availability": false
   },
   {
+    "id": 12,
     "make": "Volkswagen",
     "model": "Eurovan MV",
     "imageSrc": "",
@@ -108,6 +120,7 @@
     "availability": true
   },
   {
+    "id": 13,
     "make": "Mercedes-Benz",
     "model": "SL 63 AMG 4Matic",
     "imageSrc": "",
@@ -117,6 +130,7 @@
     "availability": false
   },
   {
+    "id": 14,
     "make": "Volkswagen Beetle",
     "model": "2.0T FWD",
     "imageSrc": "",
@@ -126,6 +140,7 @@
     "availability": true
   },
   {
+    "id": 15,
     "make": "Porsche 911",
     "model": "GT3 RS",
     "imageSrc": "",
@@ -135,6 +150,7 @@
     "availability": false
   },
   {
+    "id": 16,
     "make": "BMW M4",
     "model": "GTS Coupe",
     "imageSrc": "",
