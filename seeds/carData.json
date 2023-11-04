@@ -1,0 +1,11 @@
+[
+    {
+      "make": "Toyota",
+      "model": "Camry",
+      "imageSrc": "Toyota Camry",
+      "year": 2022,
+      "color": "Silver",
+      "price": "$50",
+      "availability": true
+    }
+]
