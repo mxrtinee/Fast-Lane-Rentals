@@ -25,6 +25,10 @@ router.get('/signup', (req, res) => {
   res.render('signup'); // Replace with your actual signup view name
 });
 
+router.get('/cars', (req, res) => {
+  res.render('cars');
+});
+
 // User signup route
 router.post('/signup', async (req, res) => {
   try {
