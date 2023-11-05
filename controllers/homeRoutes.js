@@ -1,10 +1,12 @@
 const express = require("express");
 const router = express.Router();
+const fs = require("fs");
 
 // Route to render the homepage
 router.get("/homepage", (req, res) => {
   // Render the homepage view
-  res.render("homepage"); // Replace with your actual homepage view name
+  const carData = JSON.parse(fs.readFileSync("seeds/carData.json", "utf8"));
+  res.render("homepage", { cars: carData }); // Replace with your actual homepage view name
 });
 
 // Route to render the about page
@@ -14,14 +16,14 @@ router.get("/about", (req, res) => {
 });
 
 // Route to render the login page
-router.get('/login', (req, res) => {
+router.get("/login", (req, res) => {
   //If a session exists, redirect the request to the homepage
- if (req.session.logged_in) {
-   res.redirect('/homepage');
-   return;
- }
+  if (req.session.logged_in) {
+    res.redirect("/homepage");
+    return;
+  }
 
- res.render('login');
+  res.render("login");
 });
 
 // Route to render the signup page
@@ -31,7 +33,8 @@ router.get("/signup", (req, res) => {
 });
 
 router.get("/cars", (req, res) => {
-  res.render("cars");
+  const carData = JSON.parse(fs.readFileSync("seeds/carData.json", "utf8"));
+  res.render("cars", { cars: carData });
 });
 
 // User signup route
