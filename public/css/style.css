@@ -152,6 +152,7 @@ p {
 
 .card img {
     width: 100%;
+    height: auto;
     border-radius: 20px;
 }
 
@@ -166,6 +167,22 @@ p {
 
 .column {
     flex: 1;
+}
+
+/* Green dot for available cars */
+.availability-dot.green {
+    width: 10px;
+    height: 10px;
+    background-color: green;
+    border-radius: 50%; /* Makes the dot round */
+}
+
+/* Red dot for unavailable cars */
+.availability-dot.red {
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
 }
 
 /* footer {

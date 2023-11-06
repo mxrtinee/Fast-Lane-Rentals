@@ -13,6 +13,9 @@
 
 <body>
     {{> header}}
+    {{#if logged_in}}
+        <button class="btn" id="logout">Log Out</button>
+    {{/if}}
     
     <main>
         
@@ -23,6 +26,8 @@
       {{> footer}}
 
 </body>
-
+{{#if logged_in}}
+    <script src="js/logout.js"></script>
+{{/if}}
 </html> 
 

@@ -1,41 +1,44 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
+const fs = require("fs");
 
 // Route to render the homepage
-router.get('/homepage', (req, res) => {
+router.get("/homepage", (req, res) => {
   // Render the homepage view
-  res.render('homepage'); // Replace with your actual homepage view name
+  const carData = JSON.parse(fs.readFileSync("seeds/carData.json", "utf8"));
+  res.render("homepage", { cars: carData }); // Replace with your actual homepage view name
 });
 
 // Route to render the about page
-router.get('/about', (req, res) => {
+router.get("/about", (req, res) => {
   // Render the about view
-  res.render('about'); // Replace with your actual about view name
+  res.render("about"); // Replace with your actual about view name
 });
 
 // Route to render the login page
-router.get('/login', (req, res) => {
+router.get("/login", (req, res) => {
   //If a session exists, redirect the request to the homepage
- if (req.session.logged_in) {
-   res.redirect('/homepage');
-   return;
- }
+  if (req.session.logged_in) {
+    res.redirect("/homepage");
+    return;
+  }
 
- res.render('login');
+  res.render("login");
 });
 
 // Route to render the signup page
-router.get('/signup', (req, res) => {
+router.get("/signup", (req, res) => {
   // Render the signup view
-  res.render('signup'); // Replace with your actual signup view name
+  res.render("signup"); // Replace with your actual signup view name
 });
 
-router.get('/cars', (req, res) => {
-  res.render('cars');
+router.get("/cars", (req, res) => {
+  const carData = JSON.parse(fs.readFileSync("seeds/carData.json", "utf8"));
+  res.render("cars", { cars: carData });
 });
 
 // User signup route
-router.post('/signup', async (req, res) => {
+router.post("/signup", async (req, res) => {
   try {
     // Extract user data from the request body
     const { username, email, password } = req.body;
@@ -54,19 +57,19 @@ router.post('/signup', async (req, res) => {
     req.session.user_id = newUser.id; // Store user ID in the session
 
     // Redirect to the user's dashboard or another page
-    res.redirect('/userPage');
+    res.redirect("/userPage");
   } catch (err) {
     // Handle any errors, such as validation errors or database issues
     console.error(err);
-    res.status(500).json({ error: 'Internal server error' });
+    res.status(500).json({ error: "Internal server error" });
   }
 });
 
 // Logout route
-router.get('/logout', (req, res) => {
+router.get("/logout", (req, res) => {
   // Clear the user's session to log them out
   req.session.destroy(() => {
-    res.redirect('/'); // Redirect to the home page after logout
+    res.redirect("/"); // Redirect to the home page after logout
   });
 });
 
