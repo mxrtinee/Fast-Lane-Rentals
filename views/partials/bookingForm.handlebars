@@ -1,0 +1,18 @@
+<!-- bookingForm.handlebars -->
+
+<form id="booking-form">
+  <label for="car-select">Select a Car:</label>
+  <select id="car-select" name="carId">
+    {{#each cars}}
+      <option value="{{id}}">{{make}} {{model}}</option>
+    {{/each}}
+  </select>
+
+  <label for="start-date">Start Date:</label>
+  <input type="date" id="start-date" name="startDate">
+
+  <label for="end-date">End Date:</label>
+  <input type="date" id="end-date" name="endDate">
+
+  <button type="submit">Submit Booking</button>
+</form>
