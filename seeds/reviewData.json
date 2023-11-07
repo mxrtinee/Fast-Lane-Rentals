@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "carId": 1,
+    "username": "JohnDoe",
+    "rating": 4, 
+    "comment": "Great car, smooth ride!"
+  },
+  {
+    "id": 2,
+    "carId": 2,
+    "username": "JaneSmith",
+    "rating": 5,
+    "comment": "Excellent vehicle, highly recommended."
+  }
+]
