@@ -2,7 +2,7 @@
 const sequelize = require("../config/connection"); // Import your configured Sequelize instance
 const userData = require("./userData.json"); // Import user seed data
 const carData = require("./carData.json"); // Import car seed data
-const bookingData = require("./bookingData.js"); // Import booking seed data
+const bookingData = require("./bookingData.json"); // Import booking seed data
 
 // Import your Sequelize models
 const { User, Car, Booking } = require("../models");
