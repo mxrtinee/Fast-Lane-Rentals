@@ -47,36 +47,38 @@ router.post("/signup", async (req, res) => {
 // log in
 router.post("/login", async (req, res) => {
   try {
-    const dbUserData = await User.findOne({
-      where: {
-        email: req.body.email,
-      },
-    });
+    // Read userData.json file
+    const userData = JSON.parse(fs.readFileSync(userDataFilePath, "utf8"));
+
+    // Find user by email
+    const dbUserData = userData.find((user) => user.email === req.body.email);
     if (!dbUserData) {
-      res
+      return res
         .status(400)
-        .json({ message: "Incorrect email or password. Please try again! " });
-      return;
+        .json({ message: "Incorrect email or password. Please try again!" });
     }
 
-    const validPassword = dbUserData.checkPassword(req.body.password);
-    console.log(validPassword);
+    // Check if the password is correct using bcrypt
+    const validPassword = await bcrypt.compare(
+      req.body.password,
+      dbUserData.password
+    );
     if (!validPassword) {
-      res
+      return res
         .status(400)
-        .json({ message: "Incorrect email or password. Please try again! " });
-      return;
+        .json({ message: "Incorrect email or password. Please try again!" });
     }
 
+    // Proceed with login
     req.session.save(() => {
       req.session.logged_in = true;
       res
         .status(200)
-        .json({ user: dbUserData, message: "Your are now logged in!" });
+        .json({ user: dbUserData, message: "You are now logged in!" });
     });
   } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
+    console.error(err);
+    res.status(500).json({ error: "Internal server error" });
   }
 });
 
