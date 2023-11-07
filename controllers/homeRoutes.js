@@ -20,9 +20,9 @@ router.get("/about", (req, res) => {
 });
 
 // Define a route to render the booking form
-router.get('/bookings/new', (req, res) => {
+router.get("/bookings/new", (req, res) => {
   // Render the booking form and pass the car data to the template
-  res.render('bookingForm', { cars: carData });
+  res.render("bookingForm", { cars: carData });
 });
 
 // Route to render the login page
