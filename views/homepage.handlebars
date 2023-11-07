@@ -1,43 +1,51 @@
 <header>Late or Early, at least you'll arrive in style.</header>
 
-    <div class="wheels">
-                <section class="card">
-                  <h1>Built For Speed</h1>
-                  <img src="/images/Porsche 911.jpeg" alt="{{car.make}} {{car.model}}"/>
-               
-                </section>
-                <section class="card">
-                  <h1>Convertibles</h1>
-                  <img src="/images/VW Beetle.jpeg" alt="{{car.make}} {{car.model}}"/>
-                </section>
-                <section class="card">
-                  <h1>Electrics</h1>
-                  <img src="/images/Hyundai Ioniq 5 SE.jpeg" alt="{{car.make}} {{car.model}}"/>
-                 
-                </section>
-                <section class="card">
-                  <h1>Hatch-Backs</h1>
-                  <img src="/images/Kia Rio.jpeg" alt="{{car.make}} {{car.model}}"/>
-               
-                </section>
-                <section class="card">
-                  <h1>Sedans</h1>
-                  <img src="/images/Toyota Camry.jpeg" alt="{{car.make}} {{car.model}}"/>
-                 
-                </section>
-                <section class="card">
-                  <h1>SUVs</h1>
-                  <img src="/images/Toyota Rav4.jpeg" alt="{{car.make}} {{car.model}}"/>
-                 
-                </section>
-                <section class="card">
-                  <h1>Trucks/Bakkie</h1>
-                  <img src="/images/Toyota Tundra.jpeg" alt="{{car.make}} {{car.model}}"/>
-                  
-                </section>
-                <section class="card">
-                  <h1>Vans</h1>
-                  <img src="/images/Chrysler Pacifica Plug-In Hybrid.jpeg" alt="{{car.make}} {{car.model}}"/>
-              
-                </section>
-    </div>
+<div class="wheels">
+    <!-- Car Categories -->
+    <section class="card">
+        <h1>Built For Speed</h1>
+        <a href="/cars"><img src="/images/Porsche 911.jpeg" alt="Porsche 911" /></a>
+    </section>
+    <section class="card">
+        <h1>Convertibles</h1>
+        <a href="/cars"><img src="/images/VW Beetle.jpeg" alt="VW Beetle" /></a>
+    </section>
+    <section class="card">
+        <h1>Electrics</h1>
+        <a href="/cars"><img src="/images/Hyundai Ioniq 5 SE.jpeg" alt="Hyundai Ioniq 5 SE" /></a>
+    </section>
+    <section class="card">
+        <h1>Hatch-Backs</h1>
+        <a href="/cars"><img src="/images/Kia Rio.jpeg" alt="Kia Rio" /></a>
+    </section>
+    <section class="card">
+        <h1>Sedans</h1>
+        <a href="/cars"><img src="/images/Toyota Camry.jpeg" alt="Toyota Camry" /></a>
+    </section>
+    <section class="card">
+        <h1>SUVs</h1>
+        <a href="/cars"><img src="/images/Toyota Rav4.jpeg" alt="Toyota Rav4" /></a>
+    </section>
+    <section class="card">
+        <h1>Trucks/Bakkie</h1>
+        <a href="/cars"><img src="/images/Toyota Tundra.jpeg" alt="Toyota Tundra" /></a>
+    </section>
+    <section class="card">
+        <h1>Vans</h1>
+        <a href="/cars"><img src="/images/Chrysler Pacifica Plug-In Hybrid.jpeg" alt="Chrysler Pacifica Plug-In Hybrid" /></a>
+    </section>
+</div>
+
+<!-- Reviews Section -->
+<section class="reviews">
+    <h2>Customer Reviews</h2>
+    {{#each reviews}}
+  <div class="review">
+    <p>Rating: {{rating}}</p>
+    <p>{{review_text}}</p>
+    <p>Reviewed by: {{user.username}}</p>
+  </div>
+{{/each}}
+    <!-- Add your customer reviews here -->
+</section>
+

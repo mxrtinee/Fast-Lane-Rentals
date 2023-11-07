@@ -1,31 +1,31 @@
 <header>Late or Early, at least you'll arrive in style.</header>
 
-
 <div class="wheels">
-{{#each cars as |car|}}
-
-<section class="card">
+  {{#each cars as |car|}}
+  <section class="card">
     <img src="{{car.imageSrc}}" alt="{{car.make}} {{car.model}}">
-   <h2> {{car.make}} {{car.model}}</h2> 
-   <h2>{{car.year}}</h2>
-   <p><strong>${{car.price}}/day</strong></p>
-    <div class="availability-dot 
-    {{#if car.availability}}
-    green
-    {{else}}
-    red
-    {{/if}}">
-    </div>
-      <p>
-        {{#if car.availability}}
-        Available
-        {{else}}
-        Not Available
-        {{/if}}
-        </p>
-  
-</section>
+    <h2>{{car.make}} {{car.model}}</h2>
+    <h2>{{car.year}}</h2>
+    <p><strong>${{car.price}}/day</strong></p>
+    <div class="availability-dot {{#if car.availability}}green{{else}}red{{/if}}"></div>
+    <p>
+      {{#if car.availability}}
+      Available
+      {{else}}
+      Not Available
+      {{/if}}
+    </p>
 
-{{/each}}
-
+    <!-- Add a booking form -->
+    <form action="/book" method="POST">
+      <input type="hidden" name="carId" value="{{car.id}}">
+      <label for="startDate">Start Date:</label>
+      <input type="date" id="startDate" name="startDate" required>
+      <label for="endDate">End Date:</label>
+      <input type="date" id="endDate" name="endDate" required>
+      <button type="submit" class="btn btn-primary">Book Now</button>
+    </form>
+    <!-- End of booking form -->
+  </section>
+  {{/each}}
 </div>

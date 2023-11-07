@@ -19,6 +19,12 @@ router.get("/about", (req, res) => {
   res.render("about"); // Replace with your actual about view name
 });
 
+// Define a route to render the booking form
+router.get('/bookings/new', (req, res) => {
+  // Render the booking form and pass the car data to the template
+  res.render('bookingForm', { cars: carData });
+});
+
 // Route to render the login page
 router.get("/login", (req, res) => {
   //If a session exists, redirect the request to the homepage

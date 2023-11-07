@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "startDate": "2023-11-01",
+    "endDate": "2023-11-05",
+    "userId": 1,
+    "carId": 3,
+    "totalPrice": 225.0
+  },
+  {
+    "id": 2,
+    "startDate": "2023-11-10",
+    "endDate": "2023-11-15",
+    "userId": 2,
+    "carId": 5,
+    "totalPrice": 375.0
+  },
+  {
+    "id": 3,
+    "startDate": "2023-11-20",
+    "endDate": "2023-11-25",
+    "userId": 1,
+    "carId": 8,
+    "totalPrice": 340.0
+  }
+]
