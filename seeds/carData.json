@@ -7,7 +7,8 @@
     "year": 2022,
     "color": "Silver",
     "price": 50,
-    "availability": true
+    "availability": true,
+    "type": "Sedans"
   },
   {
     "id": 2,
@@ -17,7 +18,8 @@
     "year": 2022,
     "color": "Black",
     "price": 30,
-    "availability": false
+    "availability": false,
+    "type": "Sedans"
   },
   {
     "id": 3,
@@ -27,7 +29,8 @@
     "year": 2021,
     "color": "Red",
     "price": 45,
-    "availability": true
+    "availability": true,
+    "type": "Sedans"
   },
   {
     "id": 4,
@@ -37,7 +40,8 @@
     "year": 2022,
     "color": "Pearl-White",
     "price": 60,
-    "availability": false
+    "availability": false,
+    "type": "Hatch Backs"
   },
   {
     "id": 5,
@@ -47,7 +51,8 @@
     "year": 2023,
     "color": "Blue",
     "price": 75,
-    "availability": true
+    "availability": true,
+    "type": "Trucks"
   },
   {
     "id": 6,
@@ -57,7 +62,8 @@
     "year": 2023,
     "color": "White",
     "price": 85,
-    "availability": false
+    "availability": false,
+    "type": "Trucks"
   },
   {
     "id": 7,
@@ -67,7 +73,8 @@
     "year": 2023,
     "color": "White",
     "price": 75,
-    "availability": true
+    "availability": true,
+    "type": "SUV"
   },
   {
     "id": 8,
@@ -77,7 +84,8 @@
     "year": 2021,
     "color": "Maroon",
     "price": 85,
-    "availability": false
+    "availability": false,
+    "type": "SUV"
   },
   {
     "id": 9,
@@ -87,7 +95,8 @@
     "year": 2020,
     "color": "Black",
     "price": 75,
-    "availability": true
+    "availability": true,
+    "type": "Electrics"
   },
   {
     "id": 10,
@@ -97,7 +106,8 @@
     "year": 2023,
     "color": "Silver",
     "price": 50,
-    "availability": false
+    "availability": false,
+    "type": "Electrics"
   },
   {
     "id": 11,
@@ -107,7 +117,8 @@
     "year": 2023,
     "color": "Silver",
     "price": 80,
-    "availability": false
+    "availability": false,
+    "type": "Vans"
   },
   {
     "id": 12,
@@ -117,7 +128,8 @@
     "year": 2003,
     "color": "Blue",
     "price": 45,
-    "availability": true
+    "availability": true,
+    "type": "Vans"
   },
   {
     "id": 13,
@@ -127,7 +139,8 @@
     "year": 2022,
     "color": "Metallic Grey",
     "price": 85,
-    "availability": false
+    "availability": false,
+    "type": "Convertibles"
   },
   {
     "id": 14,
@@ -137,7 +150,8 @@
     "year": 2019,
     "color": "Yellow",
     "price": 60,
-    "availability": true
+    "availability": true,
+    "type": "Convertibles"
   },
   {
     "id": 15,
@@ -147,7 +161,8 @@
     "year": 2016,
     "color": "Burgundy",
     "price": 85,
-    "availability": false
+    "availability": false,
+    "type": "Built for Speed"
   },
   {
     "id": 16,
@@ -157,6 +172,7 @@
     "year": 2018,
     "color": "Lime-Green",
     "price": 70,
-    "availability": false
+    "availability": false,
+    "type": "Built for Speed"
   }
 ]
