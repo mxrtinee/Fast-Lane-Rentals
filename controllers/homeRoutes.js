@@ -1,6 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const fs = require("fs");
+const path = require("path");
+const bcrypt = require("bcrypt");
+const saltRounds = 10;
+const userDataFilePath = path.join(__dirname, "userData.json");
 
 // Route to render the homepage
 router.get("/homepage", (req, res) => {
@@ -40,31 +44,53 @@ router.get("/cars", (req, res) => {
 // User signup route
 router.post("/signup", async (req, res) => {
   try {
-    // Extract user data from the request body
     const { username, email, password } = req.body;
 
-    // You should add validation and error handling here (e.g., checking if the email is unique)
+    // Check if the email is already in use in your database
+    const existingUser = await User.findOne({ where: { email } });
+    if (existingUser) {
+      // Handle duplicate email error
+      return res.status(400).json({ error: "Email already in use" });
+    }
 
-    // Create a new user in your database
-    const newUser = await User.create({
+    // Hash the password using bcrypt
+    const hashedPassword = await bcrypt.hash(password, saltRounds);
+
+    // Read the existing user data from userData.json
+    const userData = JSON.parse(fs.readFileSync(userDataFilePath, "utf8"));
+
+    // Check if the email is already in use in userData.json
+    const emailExistsInJson = userData.some((user) => user.email === email);
+    if (emailExistsInJson) {
+      return res.status(400).json({ error: "Email already in use" });
+    }
+
+    // Create a new user object with hashed password
+    const newUser = {
       username,
       email,
-      password, // You should hash the password before storing it
-    });
+      password: hashedPassword,
+    };
 
-    // Set the user as logged in by creating a session
-    req.session.logged_in = true;
-    req.session.user_id = newUser.id; // Store user ID in the session
+    // Add the new user to the existing user data in userData.json
+    userData.push(newUser);
+
+    // Write the updated user data back to userData.json
+    fs.writeFileSync(
+      userDataFilePath,
+      JSON.stringify(userData, null, 2),
+      "utf8"
+    );
+
+    // Set the user as logged in or create a session as needed
 
     // Redirect to the user's dashboard or another page
-    res.redirect("/userPage");
+    res.redirect("/homepage");
   } catch (err) {
-    // Handle any errors, such as validation errors or database issues
     console.error(err);
     res.status(500).json({ error: "Internal server error" });
   }
 });
-
 // Logout route
 router.get("/logout", (req, res) => {
   // Clear the user's session to log them out

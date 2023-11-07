@@ -1,35 +1,34 @@
 document.addEventListener("DOMContentLoaded", (event) => {
-  const signupForm = document.querySelector('.signup-form');
+  const signupForm = document.querySelector(".signup-form");
 
-  signupForm.addEventListener('submit', async (event) => {
+  signupForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
-    const username = document.querySelector('.signup-username').value;
-    const password = document.querySelector('.signup-password').value;
-    const email = document.querySelector('.signup-email').value;
+    const username = document.getElementById("username-signup").value;
+    const password = document.getElementById("password-signup").value;
+    const email = document.getElementById("email-signup").value;
 
     const userData = {
       username,
       password,
-      email
+      email,
     };
 
     try {
-      const response = await fetch('/api/users/signup', {
-        method: 'POST',
+      const response = await fetch("/api/users/signup", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json'
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(userData)
+        body: JSON.stringify(userData),
       });
       if (response.ok) {
-        window.location.href = '/userPage'
+        window.location.href = "/homepage";
       } else {
-        console.error('Registration failed.')
+        console.error("Registration failed.");
       }
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
     }
   });
 });
-
