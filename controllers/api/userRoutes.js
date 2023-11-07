@@ -1,23 +1,46 @@
 const router = require("express").Router();
 const User = require("../../models/User");
+const fs = require("fs");
+const path = require("path");
+const bcrypt = require("bcrypt");
+const saltRounds = 10;
+const userDataFilePath = path.join(__dirname, "../../seeds/userData.json");
 
 // creating a new user
-router.post("/", async (req, res) => {
+router.post("/signup", async (req, res) => {
   try {
-    const dbUserData = await User.create({
-      name: req.body.name,
-      email: req.body.email,
-      password: req.body.password,
-    });
-    console.log();
-    req.session.save(() => {
-      req.session.loggedIn = true;
+    const { username, email, password } = req.body;
 
-      res.status(200).json(dbUserData);
-    });
+    // Check if the email is already in use in your database
+    const existingUser = await User.findOne({ where: { email } });
+    if (existingUser) {
+      // Handle duplicate email error
+      return res.status(400).json({ error: "Email already in use" });
+    }
+
+    // Hash the password using bcrypt
+    const hashedPassword = await bcrypt.hash(password, saltRounds);
+    const userData = JSON.parse(fs.readFileSync(userDataFilePath, "utf8"));
+    // Create a new user object with hashed password
+    const newUser = {
+      username,
+      email,
+      password: hashedPassword,
+    };
+
+    userData.push(newUser);
+
+    fs.writeFileSync(
+      userDataFilePath,
+      JSON.stringify(userData, null, 2),
+      "utf8"
+    );
+
+    // Redirect to the user's dashboard or another page
+    res.redirect("/homepage");
   } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
+    console.error(err);
+    res.status(500).json({ error: "Internal server error" });
   }
 });
 
