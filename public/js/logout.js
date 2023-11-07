@@ -6,9 +6,10 @@ const logout = async () => {
 
   if (response.ok) {
     document.location.replace("login");
+    console.log("logged out1");
   } else {
     alert(response.statusText);
   }
 };
 
-document.querySelector("#logout").addEventListener("click", logout);
+document.getElementById("logout").addEventListener("click", logout);

@@ -88,21 +88,12 @@ router.post("/signup", async (req, res) => {
       "utf8"
     );
 
-    // Set the user as logged in or create a session as needed
-
     // Redirect to the user's dashboard or another page
     res.redirect("/homepage");
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Internal server error" });
   }
-});
-// Logout route
-router.get("/logout", (req, res) => {
-  // Clear the user's session to log them out
-  req.session.destroy(() => {
-    res.redirect("/"); // Redirect to the home page after logout
-  });
 });
 
 module.exports = router;
