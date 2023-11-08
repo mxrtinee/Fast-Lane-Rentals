@@ -11,24 +11,19 @@ const withAuth = require("../utils/auth");
 router.get("/", (req, res) => {
   // Render the homepage view
   const carData = JSON.parse(fs.readFileSync("seeds/carData.json", "utf8"));
-  res.render("homepage", { cars: carData, logged_in: req.session.logged_in });
-
-  // Replace with your actual homepage view name
+  res.render("homepage", { cars: carData, logged_in: req.session.logged_in}); // Replace with your actual homepage view name
 });
 
 // Route to render the about page
 router.get("/about", (req, res) => {
   // Render the about view
-  res.render("about"); // Replace with your actual about view name
+  res.render("about", {logged_in: req.session.logged_in}); // Replace with your actual about view name
 });
 
 // Define a route to render the booking form
 router.get("/bookings/new", (req, res) => {
   // Render the booking form and pass the car data to the template
-  res.render("bookingForm", {
-    cars: carData,
-    logged_in: req.session.logged_in,
-  });
+  res.render('bookingForm', { cars: carData, logged_in: req.session.logged_in});
 });
 
 // Route to render the login page
@@ -49,18 +44,18 @@ router.get("/logout", (req, res) => {
     return;
   }
 
-  res.render("login");
+  res.render("login", {logged_in: req.session.logged_in});
 });
 
 // Route to render the signup page
 router.get("/signup", (req, res) => {
   // Render the signup view
-  res.render("signup"); // Replace with your actual signup view name
+  res.render("signup", {logged_in: req.session.logged_in}); // Replace with your actual signup view name
 });
 
 router.get("/cars", withAuth, (req, res) => {
   const carData = JSON.parse(fs.readFileSync("seeds/carData.json", "utf8"));
-  res.render("cars", { cars: carData });
+  res.render("cars", { cars: carData, logged_in: req.session.logged_in});
 });
 
 // User signup route
