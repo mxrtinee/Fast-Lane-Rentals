@@ -44,6 +44,10 @@ The application is deployed on Heroku, and real data is used.
 
 The following image shows the README application's appearance and functionality:
 
+![Homepage of website.](./public/images/Fast%20Lane%20Rental.PNG)
+
+![All cars ](./public/images/fast%20lane%20rentals%20cars.PNG)
+
 ## Table of Contents
 - [Description](#description)
 - [User Story](#user-story)
@@ -52,6 +56,34 @@ The following image shows the README application's appearance and functionality:
 - [Future Development](#future-development)
 - [License](#license)
 - [Questions](#questions)
+- [Tools](#Tools)
+
+## Tools
+
+-   Front-End:
+    -   HTML: The markup language for structuring web pages.
+    -   CSS: Used for styling the application.
+    -   JavaScript: Used for client-side interactivity.
+    -   Handlebars.js: Used for rendering dynamic content on the client side.
+-   Database:
+    -   MySQL: The relational database system used for storing application data.
+-   Deployment:
+    -   Heroku: The platform where the application is deployed.
+-   API:
+    -   Environment Variables: Used for storing sensitive information like API keys.
+-   Back-End:
+
+    - Node.js: Used for building the server.
+    -   Express.js: Used for creating the RESTful API and routing.
+    -   Sequelize: An ORM for working with the MySQL database.
+    -   bcrypt: Used for password hashing and verification.
+    -   connect-session-sequelize: Used for storing session data in the database.
+    -   express-session: For managing user sessions.
+    -   fs (File System): Used for file operations like reading and writing JSON data.
+    -   path: Used for working with file paths.
+
+
+This technology stack was used to create a full-stack web application for car rentals, including user authentication, booking functionality, and user reviews.
 
 ## Future Development
 

@@ -13,7 +13,7 @@ router.get("/", (req, res) => {
   const carData = JSON.parse(fs.readFileSync("seeds/carData.json", "utf8"));
   res.render("homepage", { cars: carData, logged_in: req.session.logged_in}); // Replace with your actual homepage view name
 });
- 
+
 // Route to render the about page
 router.get("/about", (req, res) => {
   // Render the about view
@@ -21,7 +21,7 @@ router.get("/about", (req, res) => {
 });
 
 // Define a route to render the booking form
-router.get('/bookings/new', (req, res) => {
+router.get("/bookings/new", (req, res) => {
   // Render the booking form and pass the car data to the template
   res.render('bookingForm', { cars: carData, logged_in: req.session.logged_in});
 });
