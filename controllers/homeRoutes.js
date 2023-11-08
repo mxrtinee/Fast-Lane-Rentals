@@ -8,30 +8,12 @@ const userDataFilePath = path.join(__dirname, "userData.json");
 const withAuth = require("../utils/auth");
 
 // Route to render the homepage
-
-router.get("/homepage", async (req, res) => {
-  try {
-    // Render the homepage view
-
-    // Fetch car data
-    const carData = JSON.parse(fs.readFileSync("seeds/carData.json", "utf8"));
-
-    // Fetch reviews (adjust the model and attribute names according to your structure)
-    const reviews = JSON.parse(
-      fs.readFileSync("seeds/reviewData.json", "utf-8")
-    );
-
-    res.render("homepage", {
-      cars: carData,
-      reviews,
-      logged_in: req.session.logged_in,
-    }); // Pass reviews to the template
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Internal server error" });
-  }
-
+router.get("/", (req, res) => {
+  // Render the homepage view
+  const carData = JSON.parse(fs.readFileSync("seeds/carData.json", "utf8"));
+  res.render("homepage", { cars: carData }); // Replace with your actual homepage view name
 });
+ 
 // Route to render the about page
 router.get("/about", (req, res) => {
   // Render the about view
