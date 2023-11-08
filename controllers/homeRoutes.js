@@ -5,6 +5,7 @@ const path = require("path");
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 const userDataFilePath = path.join(__dirname, "userData.json");
+const withAuth = require("../utils/auth");
 
 // Route to render the homepage
 router.get("/homepage", async (req, res) => {
@@ -15,9 +16,15 @@ router.get("/homepage", async (req, res) => {
     const carData = JSON.parse(fs.readFileSync("seeds/carData.json", "utf8"));
 
     // Fetch reviews (adjust the model and attribute names according to your structure)
-    const reviews = await Review.findAll();
+    const reviews = JSON.parse(
+      fs.readFileSync("seeds/reviewData.json", "utf-8")
+    );
 
-    res.render("homepage", { cars: carData, reviews }); // Pass reviews to the template
+    res.render("homepage", {
+      cars: carData,
+      reviews,
+      logged_in: req.session.logged_in,
+    }); // Pass reviews to the template
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Internal server error" });
@@ -46,13 +53,23 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
+router.get("/logout", (req, res) => {
+  //If a session exists, redirect the request to the homepage
+  if (req.session.logged_in) {
+    res.redirect("/homepage");
+    return;
+  }
+
+  res.render("login");
+});
+
 // Route to render the signup page
 router.get("/signup", (req, res) => {
   // Render the signup view
   res.render("signup"); // Replace with your actual signup view name
 });
 
-router.get("/cars", (req, res) => {
+router.get("/cars", withAuth, (req, res) => {
   const carData = JSON.parse(fs.readFileSync("seeds/carData.json", "utf8"));
   res.render("cars", { cars: carData });
 });
@@ -98,21 +115,12 @@ router.post("/signup", async (req, res) => {
       "utf8"
     );
 
-    // Set the user as logged in or create a session as needed
-
     // Redirect to the user's dashboard or another page
     res.redirect("/homepage");
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Internal server error" });
   }
-});
-// Logout route
-router.get("/logout", (req, res) => {
-  // Clear the user's session to log them out
-  req.session.destroy(() => {
-    res.redirect("/"); // Redirect to the home page after logout
-  });
 });
 
 module.exports = router;
