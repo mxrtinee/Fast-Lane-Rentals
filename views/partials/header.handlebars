@@ -27,11 +27,11 @@
             
            
             <form class="d-flex">
+             
               {{#if logged_in}}
-              <h1>test logged in</h1>
-                <button class="btn btn-primary" id="logout">Log Out</button>
+              <button class="btn btn-primary logout" id="logout">Log Out</button>
               {{else}}
-                <button class="btn btn-primary"><a href="/login">Log In</a></button>
+              <button class="btn btn-primary"><a href="/login">Log In</a></button> 
               {{/if}}
 
             </form> 
@@ -39,4 +39,5 @@
           </div>
          </div>
         </div>
+        <script src="./js/logout.js"></script>
       </nav>
