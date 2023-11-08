@@ -8,6 +8,7 @@ const userDataFilePath = path.join(__dirname, "userData.json");
 const withAuth = require("../utils/auth");
 
 // Route to render the homepage
+
 router.get("/homepage", async (req, res) => {
   try {
     // Render the homepage view
@@ -29,6 +30,7 @@ router.get("/homepage", async (req, res) => {
     console.error(err);
     res.status(500).json({ error: "Internal server error" });
   }
+
 });
 // Route to render the about page
 router.get("/about", (req, res) => {
