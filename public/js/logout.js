@@ -9,6 +9,7 @@ const logout = async () => {
     console.log("logged out1");
   } else {
     alert(response.statusText);
+    console.log("logoutjs");
   }
 };
 
