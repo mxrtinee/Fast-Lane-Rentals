@@ -84,9 +84,11 @@ router.post("/login", async (req, res) => {
 
 // logout
 router.post("/logout", (req, res) => {
-  if (req.session.loggedIn) {
+  if (req.session.logged_in) {
     req.session.destroy(() => {
-      res.status(204).end();
+      res.status(204);
+      res.redirect("/login");
+      console.log("loggedout");
     });
   } else {
     res.status(404).end();
