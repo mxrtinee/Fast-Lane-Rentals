@@ -37,7 +37,7 @@ router.post("/signup", async (req, res) => {
     );
 
     // Redirect to the user's dashboard or another page
-    res.redirect("/homepage");
+    res.redirect("/login");
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Internal server error" });

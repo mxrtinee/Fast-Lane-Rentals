@@ -20,8 +20,13 @@
     "password": "$2b$10$x6FMUvbeDpnF0HeOek7JgeLO.Z9tgUG14gDd2uz16UTLBnjXK2QeW"
   },
   {
-    "username": "alex",
-    "email": "lopez111alex@gmail.com",
-    "password": "$2b$10$LUSiFf6dEEtAiymM7UkbdeVz66rL/tBTx7mRB1FAg2dLTRrPk7o3G"
+    "username": "demo1",
+    "email": "demo1@gmail.com",
+    "password": "$2b$10$KHAX1hlPSv/25vofKzCbRuTl3eMpZjEE7TM7ySnXRuyayB04XmPyC"
+  },
+  {
+    "username": "demo",
+    "email": "demo@gmail.com",
+    "password": "$2b$10$.zZvc325sauTBLoMPb9s5uvWgnQD8RC2xotxtlw5dAVCalmwf20WG"
   }
 ]
