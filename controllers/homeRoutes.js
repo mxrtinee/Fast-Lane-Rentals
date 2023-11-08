@@ -7,21 +7,10 @@ const saltRounds = 10;
 const userDataFilePath = path.join(__dirname, "userData.json");
 
 // Route to render the homepage
-router.get("/homepage", async (req, res) => {
-  try {
-    // Render the homepage view
-
-    // Fetch car data
-    const carData = JSON.parse(fs.readFileSync("seeds/carData.json", "utf8"));
-
-    // Fetch reviews (adjust the model and attribute names according to your structure)
-    const reviews = await Review.findAll();
-
-    res.render("homepage", { cars: carData, reviews }); // Pass reviews to the template
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Internal server error" });
-  }
+router.get("/", (req, res) => {
+  // Render the homepage view
+  const carData = JSON.parse(fs.readFileSync("seeds/carData.json", "utf8"));
+  res.render("homepage", { cars: carData }); // Replace with your actual homepage view name
 });
 // Route to render the about page
 router.get("/about", (req, res) => {
