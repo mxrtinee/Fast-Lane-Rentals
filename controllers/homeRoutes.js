@@ -7,9 +7,8 @@ const saltRounds = 10;
 const userDataFilePath = path.join(__dirname, "userData.json");
 const withAuth = require("../utils/auth");
 
-const { Review } = require("../models");
-
 // Route to render the homepage
+
 router.get("/homepage", async (req, res) => {
   try {
     // Render the homepage view
@@ -31,6 +30,7 @@ router.get("/homepage", async (req, res) => {
     console.error(err);
     res.status(500).json({ error: "Internal server error" });
   }
+
 });
 // Route to render the about page
 router.get("/about", (req, res) => {
@@ -39,9 +39,9 @@ router.get("/about", (req, res) => {
 });
 
 // Define a route to render the booking form
-router.get("/bookings/new", (req, res) => {
+router.get('/bookings/new', (req, res) => {
   // Render the booking form and pass the car data to the template
-  res.render("bookingForm", { cars: carData });
+  res.render('bookingForm', { cars: carData });
 });
 
 // Route to render the login page
