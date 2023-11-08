@@ -30,7 +30,7 @@ router.get('/bookings/new', (req, res) => {
 router.get("/login", (req, res) => {
   //If a session exists, redirect the request to the homepage
   if (req.session.logged_in) {
-    res.redirect("/homepage");
+    res.redirect("/");
     return;
   }
 
@@ -100,7 +100,7 @@ router.post("/signup", async (req, res) => {
     );
 
     // Redirect to the user's dashboard or another page
-    res.redirect("/homepage");
+    res.redirect("/");
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Internal server error" });
